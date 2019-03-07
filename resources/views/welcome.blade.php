@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <!-- Styles -->
         <style>
             html, body {
@@ -79,17 +79,37 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Guía de viajes
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="form-group">
+                    <form action="{{route('lugares.store')}}" method="post">
+                        {{csrf_field()}}
+                        {{method_field('post')}}
+                        <div class="row">
+
+                            <div class="col-lg-12">
+
+                                    <input type="text" name="nombre" id="nombre" placeholder="Nombre lugar">
+
+
+                                    <input type="text" name="foto" id="foto" placeholder="foto lugar (URL)">
+
+
+                                    <input type="text" name="descripcion" id="descripcion" placeholder="Descripción lugar">
+
+
+                            </div>
+                            <div class="col-lg-12">
+                                <input type="submit" value="Guardar lugar" class="btn btn-info">
+                            </div>
+
+                        </div>
+
+                    </form>
                 </div>
             </div>
         </div>
     </body>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>
