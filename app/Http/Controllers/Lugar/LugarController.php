@@ -37,7 +37,8 @@ class LugarController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+         Lugar::create($request->all());
+        return redirect()->route('inicio')->withMessage('Agregado ok!');
     }
 
     /**
@@ -48,7 +49,8 @@ class LugarController extends Controller
      */
     public function show($id)
     {
-        //
+        $lugares = Lugar::findOrFail($id);
+        return response()->json($lugares,200);
     }
 
     /**

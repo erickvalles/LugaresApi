@@ -82,6 +82,14 @@
                     Guía de viajes
                 </div>
 
+                <div class="row">
+                    @if(!@empty('message'))
+                        <div class="alert alert-success">
+                            Se ha agregado con exito
+                        </div>
+                        @endif
+                </div>
+
                 <div class="form-group">
                     <form action="{{route('lugares.store')}}" method="post">
                         {{csrf_field()}}
@@ -107,6 +115,18 @@
                         </div>
 
                     </form>
+                </div>
+
+
+                <div class="row">
+
+                    <table class="table-bordered" width="100%">
+                        <th>Route</th>
+                        <th>Description</th>
+                        <tr><td><a target="_blank" href="{{route('lugares.index')}}">api/lugares</a></td><td>The list of all the stored places in the site</td></tr>
+                        <tr><td><a target="_blank" href="{{route('lugares.show',['lugare'=>'1'])}}">api/lugares/{id}</a></td><td>Show single stored place.</td></tr>
+                    </table>
+
                 </div>
             </div>
         </div>

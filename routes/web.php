@@ -13,5 +13,5 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('inicio');
 Route::post('lugares','Lugar\LugarController@store')->name('lugares.store');
